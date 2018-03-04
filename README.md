@@ -2,6 +2,8 @@
 
 # InfiniteRunner3D
 
+![Infinite Runner](https://dgkanatsios.files.wordpress.com/2016/02/rotated.png)
+
 Source code for a tutorial/sample game/starter kit about creating an infinite 3D runner game in Unity (like Temple Run, Subway Surfers)
 
 - Part 1: http://dgkanatsios.com/2016/03/07/creating-an-infinite-3d-runner-game-in-unity-like-temple-run-subway-surfers-part-1/
