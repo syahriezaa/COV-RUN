@@ -124,7 +124,7 @@ public class CharacterRotateMovement : MonoBehaviour
         Vector3 offset = GameManager.Instance.CenterPosition - transform.position;
         if(isMoveInZAxis){
             if(offset.x > .1f){
-                moveDirection.x = Speed * .5f;
+                moveDirection.x = Speed * .25f;
             }
             else{
                 moveDirection.x = 0;
@@ -132,7 +132,7 @@ public class CharacterRotateMovement : MonoBehaviour
         }
         else{
             if(offset.z > .1f){
-                moveDirection.z = Speed * .5f;
+                moveDirection.z = Speed * .25f;
             }
             else{
                 moveDirection.z = 0;

@@ -697,13 +697,10 @@ MonoBehaviour:
   - {fileID: 400056}
   - {fileID: 400064}
   Bonus:
-  - {fileID: 100000, guid: 0056ab0399b0678499252ed83338b8e2, type: 3}
+  - {fileID: 100000, guid: 8210ac10156857649ab92c88833226a6, type: 3}
   - {fileID: 100000, guid: 2d89550c8f0618a4b8b430b46924e0f3, type: 3}
-  - {fileID: 100000, guid: 93e62e339751ec348895c98bcd4e94ea, type: 3}
-  - {fileID: 100000, guid: d6002b160eacfb34498c7f2daf2bc433, type: 3}
   Obstacles:
   - {fileID: 100000, guid: c7b4fd74a6762ec4c8511285c28b5fd1, type: 3}
-  - {fileID: 100000, guid: 1632d7c3ad5bd404393cac2546f446a9, type: 3}
   RandomX: 0
   minX: -2
   maxX: 2
