@@ -17,6 +17,7 @@ public class CharacterRotateMovement : MonoBehaviour
     public Transform CharacterGO;
 
     bool isInSwipeArea;
+    bool isMoveInZAxis = true;
 
 
     IInputDetector inputDetector = null;
@@ -101,12 +102,13 @@ public class CharacterRotateMovement : MonoBehaviour
             anim.SetBool(Constants.AnimationJump, false);
         }
 
-
+        
         if (GameManager.Instance.CanSwipe && inputDirection.HasValue &&
          controller.isGrounded && inputDirection == InputDirection.Right)
         {
             transform.Rotate(0, 90, 0);
             moveDirection = Quaternion.AngleAxis(90, Vector3.up) * moveDirection;
+            isMoveInZAxis = !isMoveInZAxis;
             //allow the user to swipe once per swipe location
             GameManager.Instance.CanSwipe = false;
         }
@@ -115,9 +117,27 @@ public class CharacterRotateMovement : MonoBehaviour
         {
             transform.Rotate(0, -90, 0);
             moveDirection = Quaternion.AngleAxis(-90, Vector3.up) * moveDirection;
+            isMoveInZAxis = !isMoveInZAxis;
             GameManager.Instance.CanSwipe = false;
         }
 
+        Vector3 offset = GameManager.Instance.CenterPosition - transform.position;
+        if(isMoveInZAxis){
+            if(offset.x > .1f){
+                moveDirection.x = Speed * .5f;
+            }
+            else{
+                moveDirection.x = 0;
+            }
+        }
+        else{
+            if(offset.z > .1f){
+                moveDirection.z = Speed * .5f;
+            }
+            else{
+                moveDirection.z = 0;
+            }
+        }
 
     }
 

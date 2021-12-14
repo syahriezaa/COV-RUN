@@ -36,6 +36,8 @@ public class GameManager : MonoBehaviour
     {
         GameState = GameState.Start;
         CanSwipe = false;
+        CenterMe = false;
+        CenterPosition = Vector3.zero;
     }
 
     public GameState GameState { get; set; }
@@ -47,6 +49,9 @@ public class GameManager : MonoBehaviour
             UIManager.Instance.SetStatus(Constants.StatusDeadTapToStart);
             this.GameState = GameState.Dead; 
     }
+
+    public bool CenterMe { get; set; }
+    public Vector3 CenterPosition { get; set; }
 
 }
 
