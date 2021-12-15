@@ -121,28 +121,16 @@ public class CharacterRotateMovement : MonoBehaviour
             GameManager.Instance.CanSwipe = false;
         }
 
-        Vector3 offset = GameManager.Instance.CenterPosition - transform.position;
-        if(isMoveInZAxis){
-            if(offset.x > .1f){
-                moveDirection.x = Speed * .25f;
+        if(GameManager.Instance.CenterMe){
+            Vector3 offset = (GameManager.Instance.CenterPosition - transform.position).normalized * Speed;
+            if(isMoveInZAxis){
+                controller.Move(new Vector3(offset.x, 0, 0) * Time.deltaTime);
             }
             else{
-                moveDirection.x = 0;
+                controller.Move(new Vector3(0, 0, offset.z) * Time.deltaTime);
             }
-        }
-        else{
-            if(offset.z > .1f){
-                moveDirection.z = Speed * .25f;
-            }
-            else{
-                moveDirection.z = 0;
-            }
-        }
 
+            GameManager.Instance.CenterMe = false;
+        }
     }
-
-
-
-
-
 }
